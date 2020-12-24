@@ -28,7 +28,36 @@ ii.) Out-of-sample period: June 2010 to 2016
 
 ## Dataset
 
-For this study, I will be using Futures dataset across 4 asset classes: Indices, Bonds, Currencies, Commodites provided by Quantopian up till 2016. The continuous dataset is presumably stiched through backward, forward or proportional adjusted methodology (not explicitly mentioned in Quantopian’s github repository).
+For this study, I will be using Futures dataset across 4 asset classes: Indices, Bonds, Currencies, Commodites provided by Quantopian (https://github.com/quantopian/research_public/blob/master/advanced_sample_analyses/TSMOM/TS%20MOM.ipynb) up till 2016. The continuous dataset is presumably stiched through backward, forward or proportional adjusted methodology (not explicitly mentioned in Quantopian’s github repository).
+
+
+## How to use the repository
+
+- I developed a futures research class to include the continuous forecast and Time Series Momentum (TSMOM) strategies.
+
+- You may initialize the futures strategy class as follow,
+
+#Initialize strategy class
+strategy = FuturesResearch(data_path = "./quantopian_data/futures_incl_2016.csv", 
+                           ewmac_variations = [8,16,32,64], 
+                           breakout_variations = [40,80,160,320], 
+                           optimize_weights_path = './optimize_weights', 
+                           forecast_diff_before_rebal = 6.0,
+                           notion_capital_per_position = 20000,
+                           fix_capital = 500000,
+                           commission = 20,
+                           boostrap_sample_size = 300,
+                           num_samples_per_period = 25,
+                           prop_block_boostrap = 0.25,
+                           max_annual_volatility = 0.15,
+                           ind_instr_ref_volatility = 0.4                         
+                           )
+
+- Pls look at the jupyter notebook (futures_research.ipynb) to understand how to use the class
+- Pls look at the write-up (Trend following strategy in futures using Time Series Momentum (TSMOM) and Continuous forecasts (CF).pdf) for the motivation of this study.
+- Pls look at the documentation on the futures research class (futures_research_class_documentation.pdf)
+
+Note that this is not an engineering project but more of a research project. Error handling and engineering features are not included. Should any of the repository for deployment purpose, these should be included. 
 
 
 

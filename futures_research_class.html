@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module futures_research_class</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>futures_research_class</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/jirong/Desktop/github/trend_following/futures_research_class.py">/home/jirong/Desktop/github/trend_following/futures_research_class.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Tue&nbsp;Dec&nbsp;15&nbsp;23:57:07&nbsp;2020<br>
+&nbsp;<br>
+@author:&nbsp;jirong</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="datetime.html">datetime</a><br>
+<a href="empyrical.html">empyrical</a><br>
+<a href="json.html">json</a><br>
+<a href="multiprocessing.html">multiprocessing</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+<a href="pandas.html">pandas</a><br>
+<a href="pyfolio.html">pyfolio</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="quandl.html">quandl</a><br>
+<a href="random.html">random</a><br>
+<a href="statsmodels.api.html">statsmodels.api</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+<a href="util_futures.html">util_futures</a><br>
+<a href="util.html">util</a><br>
+<a href="yfinance.html">yfinance</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="futures_research_class.html#FuturesResearch">FuturesResearch</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FuturesResearch">class <strong>FuturesResearch</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#FuturesResearch">FuturesResearch</a>(data_path,&nbsp;ewmac_variations,&nbsp;breakout_variations,&nbsp;optimize_weights_path,&nbsp;forecast_diff_before_rebal,&nbsp;notion_capital_per_position,&nbsp;fix_capital,&nbsp;commission,&nbsp;boostrap_sample_size,&nbsp;num_samples_per_period,&nbsp;prop_block_boostrap,&nbsp;max_annual_volatility,&nbsp;ind_instr_ref_volatility)<br>
+&nbsp;<br>
+<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="FuturesResearch-TSMOM_all_instr_returns"><strong>TSMOM_all_instr_returns</strong></a>(self)</dt><dd><tt>Obtain&nbsp;TSMOM&nbsp;returns&nbsp;for&nbsp;all&nbsp;instrument&nbsp;based&nbsp;on&nbsp;40%&nbsp;realized&nbsp;volatility&nbsp;for&nbsp;each&nbsp;single&nbsp;instrument</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-TSMOM_single_instr_monthly_returns"><strong>TSMOM_single_instr_monthly_returns</strong></a>(self, ret, lookback=12, cost=0.012)</dt><dd><tt>Obtain&nbsp;TSMOM&nbsp;returns&nbsp;for&nbsp;each&nbsp;single&nbsp;instrument&nbsp;based&nbsp;on&nbsp;40%&nbsp;realized&nbsp;volatility</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-__init__"><strong>__init__</strong></a>(self, data_path, ewmac_variations, breakout_variations, optimize_weights_path, forecast_diff_before_rebal, notion_capital_per_position, fix_capital, commission, boostrap_sample_size, num_samples_per_period, prop_block_boostrap, max_annual_volatility, ind_instr_ref_volatility)</dt><dd><tt>Constructor&nbsp;for&nbsp;<a href="#FuturesResearch">FuturesResearch</a>&nbsp;class<br>
+&nbsp;<br>
+:param&nbsp;data_path:&nbsp;path&nbsp;to&nbsp;data&nbsp;file&nbsp;(e.g.&nbsp;"./trend_following/quantopian_data/futures_incl_2016.csv")<br>
+:param&nbsp;ewmac_varations:&nbsp;list&nbsp;of&nbsp;ewmac&nbsp;variations&nbsp;(e.g.&nbsp;[8,16,32,64])<br>
+:param&nbsp;breakout_variations:&nbsp;list&nbsp;of&nbsp;breakout&nbsp;variations&nbsp;(e.g.&nbsp;[40,80,160,320])<br>
+:param&nbsp;optimize_weights_path:&nbsp;path&nbsp;to&nbsp;storing&nbsp;weights&nbsp;in&nbsp;a&nbsp;folder&nbsp;('./research/optimize_weights')&nbsp;<br>
+:param&nbsp;forecast_diff_before_rebal:&nbsp;Forecast&nbsp;difference&nbsp;before&nbsp;rebalancing&nbsp;an&nbsp;instrument&nbsp;position&nbsp;in&nbsp;a&nbsp;forecast&nbsp;range&nbsp;of&nbsp;-20&nbsp;to&nbsp;+20&nbsp;(e.g.&nbsp;6.0)<br>
+:param&nbsp;notion_capital_per_position&nbsp;(e.g&nbsp;20000)&nbsp;(parameter&nbsp;used&nbsp;in&nbsp;study)<br>
+:param&nbsp;fix_capital:&nbsp;(e.g&nbsp;500000)&nbsp;(parameter&nbsp;not&nbsp;used&nbsp;in&nbsp;study)<br>
+:param&nbsp;commission&nbsp;=&nbsp;20,<br>
+:param&nbsp;bootsrap_sample_size:&nbsp;Minimum&nbsp;sample&nbsp;size&nbsp;in&nbsp;each&nbsp;boostrap&nbsp;(e.g.&nbsp;300)<br>
+:param&nbsp;num_samples_per_period:&nbsp;Number&nbsp;of&nbsp;sample&nbsp;extracted&nbsp;from&nbsp;a&nbsp;period&nbsp;(e.g.&nbsp;25)<br>
+:param&nbsp;prop_block_boostrap:&nbsp;Proportion&nbsp;of&nbsp;data&nbsp;extracted&nbsp;in&nbsp;each&nbsp;bootstrap&nbsp;sample&nbsp;(e.g.&nbsp;0.25)<br>
+:param&nbsp;max_annual_volatility:&nbsp;Maximum&nbsp;portfolio&nbsp;realized&nbsp;volatility&nbsp;allowed&nbsp;(e.g.&nbsp;0.15)&nbsp;<br>
+:param&nbsp;ind_instr_ref_volatility:&nbsp;Referenced&nbsp;volatility&nbsp;level&nbsp;for&nbsp;each&nbsp;instrument&nbsp;(e.g.&nbsp;0.4)<br>
+:return:&nbsp;returns&nbsp;FutureResearch&nbsp;class</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-avg_optimized_sharpe_allinstr_single_period"><strong>avg_optimized_sharpe_allinstr_single_period</strong></a>(self, period)</dt><dd><tt>Parallelize&nbsp;optimization&nbsp;of&nbsp;sharpe&nbsp;across&nbsp;instruments&nbsp;in&nbsp;a&nbsp;period&nbsp;&nbsp;&nbsp;&nbsp;<br>
+:param&nbsp;period:&nbsp;Indexes&nbsp;referenced&nbsp;to&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;reference&nbsp;to&nbsp;period&nbsp;which&nbsp;bootstrap&nbsp;indexes&nbsp;are&nbsp;extracted</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-compute_neg_sharpe"><strong>compute_neg_sharpe</strong></a>(self, allocs_wts_forecasts, adj_forecast_single_instrument, price_series, ind_vol_target=0.4)</dt><dd><tt>Compute&nbsp;sharpe&nbsp;in&nbsp;each&nbsp;bootstrap&nbsp;optimization&nbsp;&nbsp;&nbsp;&nbsp;<br>
+:param&nbsp;allocs_wts_forecasts:&nbsp;np.array&nbsp;weights&nbsp;applied&nbsp;to&nbsp;returns&nbsp;from&nbsp;individual&nbsp;forecasts.<br>
+:param&nbsp;adj_forecast_single_instrument:&nbsp;Normalized&nbsp;forecast&nbsp;time&nbsp;series&nbsp;for&nbsp;each&nbsp;instrument<br>
+:param&nbsp;price_series:&nbsp;Price&nbsp;series&nbsp;of&nbsp;instrument<br>
+:param&nbsp;ind_vol_target:&nbsp;Reference&nbsp;individual&nbsp;volatility&nbsp;target&nbsp;level&nbsp;(e.g.&nbsp;0.4)</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-compute_optimal_leverage_all_instruments"><strong>compute_optimal_leverage_all_instruments</strong></a>(self)</dt><dd><tt>Obtain&nbsp;optimal&nbsp;leverage&nbsp;scaled&nbsp;to&nbsp;portfolio&nbsp;target&nbsp;and&nbsp;individual&nbsp;forecasts</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-create_dictionary_window_n_bootstrap_index"><strong>create_dictionary_window_n_bootstrap_index</strong></a>(self, read_pickle=False)</dt><dd><tt>Method&nbsp;for&nbsp;creating&nbsp;dictionar&nbsp;of&nbsp;window&nbsp;and&nbsp;bootstrap&nbsp;indexes.</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-create_window_index"><strong>create_window_index</strong></a>(self, df, window='expanding', days_block=252)</dt><dd><tt>Method&nbsp;for&nbsp;creating&nbsp;window&nbsp;index<br>
+&nbsp;<br>
+:param&nbsp;df:&nbsp;Data-frame<br>
+:param&nbsp;window:&nbsp;expanding&nbsp;or&nbsp;sliding<br>
+:param&nbsp;days_block:&nbsp;testing&nbsp;block&nbsp;size&nbsp;which&nbsp;is&nbsp;also&nbsp;used&nbsp;to&nbsp;create&nbsp;multiple&nbsp;of&nbsp;training&nbsp;block&nbsp;size<br>
+:return:&nbsp;returns&nbsp;list&nbsp;of&nbsp;training&nbsp;and&nbsp;testing&nbsp;indexes</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-extract_boostrap_periods"><strong>extract_boostrap_periods</strong></a>(self, df, num_samples=10, start_sample_index=0, end_sample_index=None, sample_size=300, prop_block_boostrap=0.25)</dt><dd><tt>Function&nbsp;for&nbsp;selecting&nbsp;period<br>
+&nbsp;<br>
+:param&nbsp;df:&nbsp;Data-frame<br>
+:param&nbsp;num_samples:&nbsp;Number&nbsp;of&nbsp;block&nbsp;samples<br>
+:param&nbsp;start_sample_index:&nbsp;Start&nbsp;of&nbsp;sample&nbsp;index&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+:param&nbsp;end_sample_index:&nbsp;End&nbsp;of&nbsp;sample&nbsp;index&nbsp;&nbsp;&nbsp;<br>
+:param&nbsp;sample_size:&nbsp;Minimum&nbsp;sample&nbsp;size&nbsp;length&nbsp;&nbsp;&nbsp;<br>
+:param&nbsp;prop_block_boostrap:&nbsp;Proportion&nbsp;of&nbsp;data&nbsp;used&nbsp;in&nbsp;each&nbsp;sample&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+:return:&nbsp;returns&nbsp;dictionary&nbsp;of&nbsp;start&nbsp;and&nbsp;end&nbsp;indexes</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_all_commod_returns"><strong>get_all_commod_returns</strong></a>(self)</dt><dd><tt>Obtain&nbsp;returns&nbsp;for&nbsp;all&nbsp;instruments&nbsp;based&nbsp;on&nbsp;optimal&nbsp;leverage&nbsp;scaled&nbsp;to&nbsp;portfolio&nbsp;target&nbsp;and&nbsp;individual&nbsp;forecasts</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_all_opt_weights"><strong>get_all_opt_weights</strong></a>(self, path='research/optimize_weights/')</dt><dd><tt>Obtain&nbsp;optimized&nbsp;weight&nbsp;for&nbsp;all&nbsp;files&nbsp;produced&nbsp;by&nbsp;method&nbsp;avg_optimized_sharpe_allinstr_single_period</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_combined_forecasts_all_instr"><strong>get_combined_forecasts_all_instr</strong></a>(self, allocs_wts_forecasts=None)</dt><dd><tt>Obtain&nbsp;combined&nbsp;forecasts&nbsp;for&nbsp;all&nbsp;instruments<br>
+:param&nbsp;allocs_wts_forecasts:&nbsp;np.array&nbsp;forecast&nbsp;weights.&nbsp;If&nbsp;none,&nbsp;equal&nbsp;weights&nbsp;are&nbsp;assigned&nbsp;to&nbsp;each&nbsp;forecast&nbsp;rule</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_combined_forecasts_single_instr"><strong>get_combined_forecasts_single_instr</strong></a>(self, commod, allocs_wts_forecasts=None)</dt><dd><tt>Obtain&nbsp;combined&nbsp;forecasts&nbsp;for&nbsp;single&nbsp;instrument<br>
+:param&nbsp;commod:&nbsp;Commodity&nbsp;symbol<br>
+:param&nbsp;allocs_wts_forecasts:&nbsp;np.array&nbsp;forecast&nbsp;weights.&nbsp;If&nbsp;none,&nbsp;equal&nbsp;weights&nbsp;are&nbsp;assigned&nbsp;to&nbsp;each&nbsp;forecast&nbsp;rule</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_commod_returns"><strong>get_commod_returns</strong></a>(self, commod)</dt><dd><tt>Obtain&nbsp;returns&nbsp;for&nbsp;instrument&nbsp;based&nbsp;on&nbsp;optimal&nbsp;leverage&nbsp;scaled&nbsp;to&nbsp;portfolio&nbsp;target&nbsp;and&nbsp;individual&nbsp;forecasts</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_norm_breakout_info"><strong>get_norm_breakout_info</strong></a>(self)</dt><dd><tt>Obtain&nbsp;normalized&nbsp;donchian&nbsp;channel&nbsp;forecasts&nbsp;scaled&nbsp;to&nbsp;a&nbsp;range&nbsp;of&nbsp;-20&nbsp;to&nbsp;+20</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_norm_ewmac_info"><strong>get_norm_ewmac_info</strong></a>(self)</dt><dd><tt>Obtain&nbsp;normalized&nbsp;ewmac&nbsp;forecasts&nbsp;scaled&nbsp;to&nbsp;a&nbsp;range&nbsp;of&nbsp;-20&nbsp;to&nbsp;+20</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_opt_weight_file"><strong>get_opt_weight_file</strong></a>(self, file_name, path='research/optimize_weights/')</dt><dd><tt>Obtain&nbsp;optimized&nbsp;weight&nbsp;for&nbsp;single&nbsp;file&nbsp;produced&nbsp;by&nbsp;method&nbsp;avg_optimized_sharpe_allinstr_single_period<br>
+:param&nbsp;period:&nbsp;Indexes&nbsp;referenced&nbsp;to&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;reference&nbsp;to&nbsp;period&nbsp;which&nbsp;bootstrap&nbsp;indexes&nbsp;are&nbsp;extracted</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-get_returns_data"><strong>get_returns_data</strong></a>(self)</dt><dd><tt>Obtain&nbsp;returns&nbsp;data&nbsp;from&nbsp;file;&nbsp;convert&nbsp;to&nbsp;price&nbsp;level&nbsp;that&nbsp;starts&nbsp;at&nbsp;1</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-optimize_sharpe_single_instrument_period"><strong>optimize_sharpe_single_instrument_period</strong></a>(self, commod, period, bootstrap_index)</dt><dd><tt>Optimize&nbsp;sharpe&nbsp;in&nbsp;each&nbsp;bootstrap&nbsp;optimization&nbsp;and&nbsp;return&nbsp;dictionary&nbsp;of&nbsp;weights&nbsp;and&nbsp;performance.&nbsp;Optimize&nbsp;weight&nbsp;for&nbsp;each&nbsp;isntrument&nbsp;for&nbsp;each&nbsp;bootstrap&nbsp;sample&nbsp;saved&nbsp;as&nbsp;json&nbsp;file&nbsp;&nbsp;&nbsp;&nbsp;<br>
+:param&nbsp;commod:&nbsp;Commodity&nbsp;symbol<br>
+:param&nbsp;period:&nbsp;Indexes&nbsp;referenced&nbsp;to&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;reference&nbsp;to&nbsp;period&nbsp;which&nbsp;bootstrap&nbsp;indexes&nbsp;are&nbsp;extracted<br>
+:param&nbsp;boostrap_index:&nbsp;Indexes&nbsp;referenced&nbsp;to&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;reference&nbsp;to&nbsp;bootstrap&nbsp;indexes&nbsp;referenced&nbsp;to&nbsp;self.<strong>price</strong>&nbsp;dataframe</tt></dd></dl>
+
+<dl><dt><a name="FuturesResearch-select_period"><strong>select_period</strong></a>(self, df, start_date, end_date, index_date='date')</dt><dd><tt>Select&nbsp;period&nbsp;in&nbsp;self.<strong>price</strong>&nbsp;data&nbsp;frame&nbsp;based&nbsp;on&nbsp;starting,&nbsp;ending&nbsp;date&nbsp;or&nbsp;indexes.&nbsp;indexes&nbsp;used&nbsp;in&nbsp;study<br>
+:param&nbsp;start_date:&nbsp;start&nbsp;date<br>
+:param&nbsp;end_date:&nbsp;end&nbsp;date<br>
+:param&nbsp;index_date:&nbsp;select&nbsp;by&nbsp;'index'&nbsp;or&nbsp;'date'</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

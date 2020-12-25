@@ -39,7 +39,7 @@ class FuturesResearch(object):
         :param data_path: path to data file (e.g. "./trend_following/quantopian_data/futures_incl_2016.csv")
         :param ewmac_varations: list of ewmac variations (e.g. [8,16,32,64])
         :param breakout_variations: list of breakout variations (e.g. [40,80,160,320])
-        :param optimize_weights_path: path to storing weights in a folder ('./research/optimize_weights') 
+        :param optimize_weights_path: path to storing weights in a folder ('./optimize_weights') 
         :param forecast_diff_before_rebal: Forecast difference before rebalancing an instrument position in a forecast range of -20 to +20 (e.g. 6.0)
         :param notion_capital_per_position (e.g 20000) (parameter used in study)
         :param fix_capital: (e.g 500000) (parameter not used in study)
@@ -319,7 +319,7 @@ class FuturesResearch(object):
               
         pass
     
-    def get_opt_weight_file(self,file_name,path='research/optimize_weights/'):
+    def get_opt_weight_file(self,file_name,path='optimize_weights/'):
         
         """
         Obtain optimized weight for single file produced by method avg_optimized_sharpe_allinstr_single_period
@@ -346,7 +346,7 @@ class FuturesResearch(object):
         
         return df_indiv    
     
-    def get_all_opt_weights(self,path='research/optimize_weights/'):
+    def get_all_opt_weights(self,path='optimize_weights/'):
         
         """
         Obtain optimized weight for all files produced by method avg_optimized_sharpe_allinstr_single_period

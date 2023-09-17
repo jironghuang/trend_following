@@ -105,7 +105,7 @@ class FuturesResearch(object):
         self.price = (1 + self.returns).cumprod()            
         self.commod = list(self.price.columns)
               
-        pass
+        pass 
                   
     def get_norm_ewmac_info(self):
         
